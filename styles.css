@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+/* Global Varibles */
+
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+/* CSS Reset: https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,h1,h2,h3,h4,p,figure,blockquote,dl,dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,button,textarea,select {
+  font: inherit;
+}
+
+
+/* 
+================
+====MAIN CSS====
+================
+*/
+
+
+html {
+  background-color: var(--very-pale-blue);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 25em;
+  margin: 2em 2em 2em 2em;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 7px 17px 62px 1px rgba(0,0,0,0.38);
+}
+
+.img-header {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-header {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding: 0em 2em 0em 2em;
+}
+
+.card-header h1 {
+  color: var(--dark-blue);
+  margin-bottom: 1em;
+}
+
+.payment-btn {
+  font-weight: 900;
+  align-self: center;
+  border: none;
+  border-radius: 10px;
+  padding: .5em 4em .5em 4em;
+  box-shadow: -1px 12px 29px 1px rgba(0,0,0,0.29);
+}
+
+.payment-btn:hover {
+  cursor: pointer;
+}
+
+.extra-card-section {
+  display: flex;
+  align-items: center;
+  background-color: var(--very-pale-blue);
+  border-radius: 15px;
+  padding: 1em 1em 1em .5em;
+  margin: 1em 1em 2em 1em;
+}
+
+.extra-card-section img {
+  margin-right: 1em;
+}
+
+.extra-card-section a {
+  font-weight: 700;
+  color: var(--bright-blue);
+  margin-left: 7em;
+}
+
+@media only screen and (min-width: 375px) {
+  .extra-card-section a {
+    margin-left: 2em;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .extra-card-section a {
+    margin-left: 5em;
+  }
+}
+
+.cancel-order {
+  align-self: center;
+  font-weight: 900;
+  margin-top: 2em;
+  margin-bottom: 3em;
+  text-decoration: none;
+}
+
+/* 
+================
+=HELPER CLASSES=
+================
+*/
+
+.stack-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.desaturated-blue-text {
+  color: var(--desaturated-blue)
+}
+
+.bold-dark-blue {
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+
+.blue-btn {
+  background-color: var(--bright-blue);
+  color: white;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
